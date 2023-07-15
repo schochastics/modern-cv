@@ -1,0 +1,78 @@
+---
+author: David Schoch
+title: R Developer
+tagline: 
+  field1: David Schoch
+  field2: R Developer
+  field3: Cologne, Germany
+  colored: david@schochastics.net
+  field5: Cologne, Germany
+format:
+  modern-cv-pdf: default
+cvfooter:
+  left: "mr.schochastics.net"
+  right: "github.com/schochastics"
+cvcolor: 	FF9600 #without `#`
+bgcolor: 616161
+cvfont: raleway #texlive fonts like raleway,fetamont,gillius,comfortaa
+cvmeta:
+  - title: Status
+    text: Team Lead for Transparent Social Analytics, GESIS
+  - title: Field
+    text: Software Engineering, Data Science
+  - title: Techs
+    text: R, bash, Python, javascript, Lua
+execute:
+  echo: false
+---
+
+```{r}
+#| label: cvevents
+cvevents <- function(tbl, when, what, where, para1,para2) {
+
+    command_start <- "\\cvevent"
+
+    res <- paste0(
+        command_start, "{", tbl[[when]], "}", 
+        "{", tbl[[what]], "}",
+        "{", tbl[[where]], "}",
+        "{", tbl[[para1]], "}",
+        "{", tbl[[para2]], "}"
+        )
+
+    cat(res, sep = "\n")
+}
+```
+
+
+# Experience
+
+
+```{r}
+#| label: experience
+#| output: asis
+tibble::tribble(
+    ~role, ~institution, ~dates, ~details, ~para1, ~para2,
+    "Team Lead", "GESIS", "since 03/2022",
+    "Transparent Social Analytics, Department of Computational Social Science", "Coordination of a project to build an Open Science platform with reusable code and tutorials", "Implementation of tools to enhance reproducibility and facilitate research with digital data in R",
+    "Presidential Fellow", "University of Manchester", "2018 - 2022",
+    "Sociology Department", "Research on Disinformation on Social Media", "Analyses of large scale and unstructured data sets with R, Python and Bash",
+    "Post Doctoral Researcher", "ETH Zurich", "2017 - 2018", "Chair of Social Networks", "Developing new methods to analyze social networks", "Gathering and analyzing large datsets from Social Media APIs",
+    "Post Doctoral Researcher", "University of Konstanz", " 2015 - 2017", "Department of Computer & Information Science", "Developing new methods to analyze social networks", "Webscraping and harmonizing a large corpus of football data",
+    "Ph.D. Candidate", "University of Konstanz", "2012 - 2015", "Department of Computer & Information Science", "Developing new methods to analyze social networks", "Implementing methods in libraries"
+) |>
+    cvevents(when = "dates", what = "role", where = "institution", para1 = "para1", para2 = "para2")
+```
+
+# Education
+
+```{r }
+#| label: education
+#| output: asis
+tibble::tribble(
+    ~degree, ~uni, ~loc, ~dates, ~para1, ~para2,
+    "Ph.D. in Computer Science", "University of Konstanz", "Konstanz, Germany", "2012 - 2015", "Thesis: A Positional Approach for Network Centrality", "Developed and implemented new methods to assess network centrality",
+    "Diploma in Business Mathematics", "KIT", "Karlsruhe, Germany", "2006 - 2012", "Thesis: Modularity Maximization", "Implementation and comparison of different clustering algorithms using Matlab"
+) |>
+    cvevents(when = "dates", what = "degree", where = "loc", para1 = "para1", para2 = "para2")
+```
