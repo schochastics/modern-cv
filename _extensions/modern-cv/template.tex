@@ -27,88 +27,53 @@
 %	DOCUMENT DEFINITION
 %
 %============================================================================%
-
-%we use article class because we want to fully customize the page and dont use a cv template
 \documentclass[10pt,A4]{article}	
 
 
 %----------------------------------------------------------------------------------------
 %	ENCODING
 %----------------------------------------------------------------------------------------
-
-%we use utf8 since we want to build from any machine
 \usepackage[utf8]{inputenc}		
 
 %----------------------------------------------------------------------------------------
 %	LOGIC
 %----------------------------------------------------------------------------------------
-
-% provides \isempty test
 \usepackage{xifthen}
 
 %----------------------------------------------------------------------------------------
 %	FONT
 %----------------------------------------------------------------------------------------
-
-% some tex-live fonts - choose your own
-
-%\usepackage[defaultsans]{droidsans}
-%\usepackage[default]{comfortaa}
-%\usepackage{cmbright}
 \usepackage{$cvfont$}
-%\usepackage{fetamont}
-%\usepackage[default]{gillius}
-%\usepackage[light,math]{iwona}
-%\usepackage[thin]{roboto} 
 
-% set font default
 \renewcommand*\familydefault{\sfdefault} 	
 \usepackage[T1]{fontenc}
 
-% more font size definitions
 \usepackage{moresize}		
 
 
 %----------------------------------------------------------------------------------------
 %	PAGE LAYOUT  DEFINITIONS
 %----------------------------------------------------------------------------------------
-
-%debug page outer frames
-%\usepackage{showframe}			
-
-
-%define page styles using geometry
 \usepackage[a4paper]{geometry}		
-
-% for example, change the margins to 2 inches all round
 \geometry{top=1.75cm, bottom=-.3cm, left=1.5cm, right=1.5cm} 	
 
-%use customized header
 \usepackage{fancyhdr}				
 \pagestyle{fancy}
 
-%less space between header and content
 \setlength{\headheight}{-5pt}		
 
-
-%customize entries left, center and right
 \lhead{}
-\chead{ \small{$tagline.field1$  * $tagline.field2$ *  $tagline.field3$  *  \textcolor{sectcol}{\textbf{$tagline.colored$}}  * $tagline.field5$}}
+\chead{ \small{$tagline.field1$ * $tagline.field2$ * $tagline.field3$ * \textcolor{sectcol}{\textbf{$tagline.colored$}}  * $tagline.field5$}}
 \rhead{}
 
-
-%indentation is zero
 \setlength{\parindent}{0mm}
 
 %----------------------------------------------------------------------------------------
 %	TABLE /ARRAY DEFINITIONS
 %---------------------------------------------------------------------------------------- 
-
-%for layouting tables
 \usepackage{multicol}			
 \usepackage{multirow}
 
-%extended aligning of tabular cells
 \usepackage{array}
 
 \newcolumntype{x}[1]{%
@@ -118,17 +83,9 @@
 %----------------------------------------------------------------------------------------
 %	GRAPHICS DEFINITIONS
 %---------------------------------------------------------------------------------------- 
-
-%for header image
 \usepackage{graphicx}
-
-%for floating figures
 \usepackage{wrapfig}
 \usepackage{float}
-%\floatstyle{boxed} 
-%\restylefloat{figure}
-
-%for drawing graphics		
 \usepackage{tikz}				
 \usetikzlibrary{shapes, backgrounds,mindmap, trees}
 
@@ -279,9 +236,6 @@
 %
 %============================================================================%
 \begin{document}
-
-
-%use our custom fancy header definitions
 \pagestyle{fancy}
 
 
